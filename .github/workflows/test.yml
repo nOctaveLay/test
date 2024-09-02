@@ -13,7 +13,7 @@ jobs:
       - run: gh label list
       # - run: gh issue edit "$NUMBER" --add-label "$LABELS"
       #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GH_TOKEN: ${{ secrets.testToken }}
       #     GH_REPO: ${{ github.repository }}
       #     NUMBER: ${{ github.event.issue.number }}
       #     LABELS: triage
