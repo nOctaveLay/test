@@ -10,6 +10,7 @@ jobs:
     permissions:
       issues: write
     steps:
+      - run: gh issue edit "$NUMBER" --add-assignee ${{github.actor}}
       - run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.testToken }}
