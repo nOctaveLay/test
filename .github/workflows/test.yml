@@ -12,8 +12,8 @@ jobs:
     steps:
       # - run: gh issue edit "$NUMBER" --add-assignee ${{github.actor}}
       - run:| 
-        gh issue edit "$NUMBER" --add-assignee ${{github.actor}}
-        gh issue edit "$NUMBER" --add-label "$LABELS"
+          gh issue edit "$NUMBER" --add-assignee ${{github.actor}}
+          gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.testToken }}
           GH_REPO: ${{ github.repository }}
