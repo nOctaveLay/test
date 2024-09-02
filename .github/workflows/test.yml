@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: test issue tracking
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  issues:
+    types:
+      - created
+    
+  # # Allows you to run this workflow manually from the Actions tab
+  # workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  add-labels:
+    name: Example
+    runs-on: ubuntu-latest
+
+    # Write permissions to issues is required
+    permissions:
+      issues: write
+
+    steps:
+      # Add labels to an issue in this repository
+      - name: Add Labels
+        id: add-labels
+        with:
+          action: add
+          issue_number: 1
+          labels: |
+            enhancement
+            great-first-issue
