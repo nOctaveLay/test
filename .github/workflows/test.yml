@@ -7,7 +7,7 @@ on:
 jobs:
   add_assignee:
     runs-on: ubuntu-latest
-    if: ${{github.event.issue.labels != ''}}
+    if: ${{github.event.issue.labels == ''}}
     permissions:
       issues: write
     steps:
@@ -19,7 +19,7 @@ jobs:
           
   add_label_issues:
     runs-on: ubuntu-latest
-    if: ${{github.event.issue.labels != ''}}
+    if: ${{github.event.issue.labels == ''}}
     permissions:
       issues: write
     steps:
