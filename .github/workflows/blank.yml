@@ -1,10 +1,9 @@
-name: testLabeled
 on:
   issues:
     types:
       - opened
       - reopened
-    
+
 jobs:
   add-comment:
     runs-on: ubuntu-latest
@@ -16,5 +15,3 @@ jobs:
           GH_TOKEN: ${{ secrets.testToken }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
-        
-
