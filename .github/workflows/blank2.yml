@@ -7,20 +7,19 @@ on:
   #   - cron: "00 10 * * MON"
     
 jobs:          
-  add_label_issues:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    steps:
-      - run: 
-          gh issue create --title "Temp" --body "hello!"
-        env:
-          GH_TOKEN: ${{ secrets.testToken }}
-          GH_REPO: ${{ github.repository }}
+  # add_label_issues:
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     issues: write
+  #   steps:
+  #     - run: 
+  #         gh issue create --title "Temp" --body "hello!"
+  #       env:
+  #         GH_TOKEN: ${{ secrets.testToken }}
+  #         GH_REPO: ${{ github.repository }}
     
   print_issue:
     runs-on: ubuntu-latest
-    if: ${{github.event.issue.labels == ''}}
     permissions:
       issues: write
     steps:
