@@ -5,6 +5,10 @@ on:
       - reopened
       - opened
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{github.event.issue.labels}}
   add_assignee:
     runs-on: ubuntu-latest
     if: ${{github.event.issue.labels == ''}}
@@ -23,7 +27,6 @@ jobs:
     permissions:
       issues: write
     steps:
-      # - run: gh issue edit "$NUMBER" --add-assignee ${{github.actor}}
       - run: 
           gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
