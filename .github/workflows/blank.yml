@@ -10,7 +10,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: echo $${{github.event.issue.labels.name}}
+      - run: echo $"NUMBER"
         env:
           GH_TOKEN: ${{ secrets.testToken }}
           GH_REPO: ${{ github.repository }}
