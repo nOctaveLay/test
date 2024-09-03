@@ -17,3 +17,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.testToken }}
           GH_REPO: ${{ github.repository }}
+    
+  print_issue:
+    runs-on: ubuntu-latest
+    if: ${{github.event.issue.labels == ''}}
+    permissions:
+      issues: write
+    steps:
+      - run: echo ${{github.event.issue.labels}}
