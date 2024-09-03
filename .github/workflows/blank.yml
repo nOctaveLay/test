@@ -2,7 +2,8 @@ name: testLabeled
 on:
   issues:
     types:
-      - unlabeled
+      - opened
+      - reopened
     
 jobs:
   add-comment:
@@ -10,21 +11,10 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: gh issue edit "$NUMBER" --add-assignee ${{github.actor}}
+      - run: echo $${{github.event.issue.labels.name}}
         env:
           GH_TOKEN: ${{ secrets.testToken }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
-          
-  add_label_issues:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    steps:
-      - run: gh issue edit "$NUMBER" --add-label "$LABELS"
-        env:
-          GH_TOKEN: ${{ secrets.testToken }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-          LABELS: documentation
+        
 
