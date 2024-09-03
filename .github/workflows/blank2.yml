@@ -23,4 +23,4 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: echo ${{github.event.issue}}
+      - run: echo ${{github.event.issue}} - ${{github.event.issue.number}} -${{github.event.issue.labels}}
