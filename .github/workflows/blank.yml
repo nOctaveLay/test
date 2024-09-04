@@ -1,18 +1,10 @@
 on:
-  issues:
-    types:
-      - opened
-      - reopened
+  push:
+    paths:
+      - '임정아/paper/*.txt'
 
 jobs:
   add-comment:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-      - run: echo "$NUMBER" and "$LABEL_NAME"
-        env:
-          GH_TOKEN: ${{ secrets.testToken }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-          LABEL_NAME: ${{github.event.issue.labels.name}}
+      - run: echo "Hello, World!"
