@@ -23,6 +23,7 @@ def change_table(lines:list,add_contents:str)->tuple:
 def change_paper(change_contents:str, text_file_path = "./README.md"):
     """
     "README.md"의 paper 부분을 월에 맞춰서 바꿔줌.
+
     """
     new_contents = ''
     with open(text_file_path,'r',encoding = 'utf-8') as f:
