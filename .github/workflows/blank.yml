@@ -1,7 +1,7 @@
 on:
   push:
-    branches:
-      - main
+    paths:
+      - "paper/*"
 
 jobs:
   add-comment:
