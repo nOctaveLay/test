@@ -1,7 +1,7 @@
 on:
   push:
-    paths:
-      - '임정아/paper/*.txt'
+    branches:
+      - main
 
 jobs:
   add-comment:
