@@ -4,11 +4,11 @@ on:
         - main
 
 jobs:
-  revise_readme:
+  revise_readme_zero:
     runs-on: ubuntu-latest
     steps:          
         - name: Commit and push changes
           if: steps.changed-files.outputs.files_changed == 'true'
           run: |
              echo ${{github.actor}}
-             echo ${{var.email}}
+             echo ${{vars.email}}
