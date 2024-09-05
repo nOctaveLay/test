@@ -1,0 +1,24 @@
+on:
+  schedule:
+    - cron: "10 * * * *"
+
+jobs:
+  revise_readme:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Setup Python
+          uses: actions/setup-python@v5.2.0
+
+        - name: Run Python script
+          run: python generate_readme.py
+          
+        - name: Commit and push changes
+          if: steps.changed-files.outputs.files_changed == 'true'
+          run: |
+             echo ${{github.actor}}
+             echo ${{var.email}}
+             # git config user.name ${{github.actor}}
+             # git config user.email $${{var.email}}
+             # git add .
+             # git commit -m "Update readme.md"
+             # git push https://${{ secrets.GH_TOKEN }}@github.com/yeonjin1357/action_test.git
