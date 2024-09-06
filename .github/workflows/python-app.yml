@@ -3,10 +3,14 @@
 
 name: Python application
 
+# on:
+#   schedule:
+#     - cron: "10 * * * *"
 on:
-  schedule:
-    - cron: "10 * * * *"
-
+  push:
+    branches:
+      - main
+      
 jobs:
   build:
     runs-on: ubuntu-latest
