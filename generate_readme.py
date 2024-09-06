@@ -87,8 +87,9 @@ def update_text(contents:str, file_name:str):
 
 
 if __name__ == "__main__":
-    retro = return_new_contents(week_format+"\n\n"+data+"\n","../README.md", "## 👋주간 회고지")
-    update_text(retro,"../README.md")
+    file_name = "./README.md"
+    retro = return_new_contents(week_format+"\n\n"+data+"\n",file_name, "## 👋주간 회고지")
+    update_text(retro,file_name)
     
-    note = return_new_contents(week_format+"\n\n"+data+"\n","../README.md", "## 📝주간 정리 (optional)")
-    update_text(note,"../README.md")
+    note = return_new_contents(week_format+"\n\n"+data+"\n",file_name, "## 📝주간 정리 (optional)")
+    update_text(note,file_name)
