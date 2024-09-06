@@ -20,7 +20,7 @@ jobs:
       with:
         python-version: "3.10"
     - run: python generate_readme.py
-      working-directory: "./"
+      working-directory: "/"
       
     - name: Git Push Action
       uses: x-actions/git-push@v1.0
