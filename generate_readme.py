@@ -3,8 +3,7 @@ from datetime import datetime, timedelta
 now = datetime.now()
 end = now + timedelta(days = 5)
 week_format = f"### {now.strftime('%y.%m.%d')} {now.strftime('%a').upper()} - {end.strftime('%y.%m.%d')} {end.strftime('%a').upper()}"
-data = '- **📍임찬혁**\n- **📍서동환**\n- **📍박지완**\n- **📍김태한**\n- **📍임정아**\n- **📍이은아**\n'
-
+data = ''
 def add_paper(change_contents:str, text_file_path = "../README.md"):
     """
     "README.md"의 paper를 월에 맞춰서 생성
