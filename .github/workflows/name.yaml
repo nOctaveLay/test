@@ -28,4 +28,4 @@ jobs:
         git config --global user.email "wjddkdml1124@naver.com"
         git add .
         git commit -m "change readme.md automatically"
-        git push https://{secrets.testtoken}@github.com/nOctaveLay/test.git
+        git push https://${{secrets.testtoken}}@github.com/nOctaveLay/test.git
