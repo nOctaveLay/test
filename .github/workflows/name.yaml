@@ -21,11 +21,11 @@ jobs:
         python-version: "3.10"
     # - run: ls ${{ github.workspace }}
     - run: python generate_readme.py
-        # git user email
-        # GITHUB_EMAIL: wjddkdml1124@naver.com
-        # # git use username
-        # GITHUB_USERNAME: nOctaveLay  
 
-        # # https:/<token>@github.com/owner/repo.git
-        # PUBLISH_REPO: https:/${{secrets.testToken}}@github.com/nOctaveLay/test.git
-
+    - name: Git Push Action
+      run: |
+        git config --global user.name "nOctaveLay"
+        git config --global user.email "wjddkdml1124@naver.com"
+        git add .
+        git commit -m "change readme.md automatically"
+        git push https://{secrets.testtoken}@github.com/{nOctaveLay}/{test}.git
