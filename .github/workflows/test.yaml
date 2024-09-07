@@ -9,4 +9,4 @@ jobs:
     steps:
     - run: |
         echo The PR was merged
-        echo ${{ fromJson(github.event.pusher.login)}}
+        echo ${{github.event.pusher.name}}
