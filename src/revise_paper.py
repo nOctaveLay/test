@@ -35,3 +35,5 @@ def return_new_contents(pr_name:str, contents:str, file_name:str, matching:str):
                     return new_contents
                 
         return  new_contents
+    
+return_new_contents()
