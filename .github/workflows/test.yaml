@@ -9,4 +9,5 @@ jobs:
     steps:
     - run: |
         echo The PR was merged
-        echo ${{ github.actor }}
+        echo ${{ vars.EMAIL }}
+        echo ${{vars.NAME}}
