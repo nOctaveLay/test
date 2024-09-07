@@ -4,8 +4,9 @@
 name: Schedule Test
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
