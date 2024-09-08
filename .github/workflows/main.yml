@@ -37,7 +37,7 @@ jobs:
     - name: Check Diff
       id: check-diff
       run:
-        git status README.md >> $GITHUB_OUTPUT
+        echo git status README.md -s >> $GITHUB_OUTPUT
         
     - name: Git Push Action
       if: ${{steps.check-diff.GITHUB_OUTPUT}}
