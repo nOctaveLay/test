@@ -35,6 +35,5 @@ This is sample text
 - **📍AndSomeone**
 - **📍Isasking**
 - **📍Someone**
-### 24.09.07 SAT - 24.09.12 THU
 
 
