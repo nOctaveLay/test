@@ -1,9 +1,17 @@
+import argparse
 from datetime import datetime, timedelta
+# Parser field
+parser = argparse.ArgumentParser(description = 'Revise Readme')
+parser.add_argument('-w','--week', action='store_true')
+parser.add_argument('-m','--month', action='store_true')
 
+
+# Setting field
 now = datetime.now()
 end = now + timedelta(days = 5)
 week_format = f"### {now.strftime('%y.%m.%d')} {now.strftime('%a').upper()} - {end.strftime('%y.%m.%d')} {end.strftime('%a').upper()}"
 data = ''
+
 def add_paper(change_contents:str, text_file_path = "../README.md"):
     """
     "README.md"의 paper를 월에 맞춰서 생성
@@ -86,9 +94,12 @@ def update_text(contents:str, file_name:str):
 
 
 if __name__ == "__main__":
-    file_name = "./README.md"
-    retro = return_new_contents(week_format+"\n\n"+data+"\n",file_name, "## 👋주간 회고지")
-    update_text(retro,file_name)
+    args = parser.parse_args()
+    print(args)
+    print(args.week, args.month)
+    # file_name = "./README.md"
+    # retro = return_new_contents(week_format+"\n\n"+data+"\n",file_name, "## 👋주간 회고지")
+    # update_text(retro,file_name)
     
-    note = return_new_contents(week_format+"\n\n"+data+"\n",file_name, "## 📝주간 정리 (optional)")
-    update_text(note,file_name)
+    # note = return_new_contents(week_format+"\n\n"+data+"\n",file_name, "## 📝주간 정리 (optional)")
+    # update_text(note,file_name)
