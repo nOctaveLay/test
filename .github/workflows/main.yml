@@ -28,7 +28,7 @@ jobs:
     - name: Add paper list to readme.md
       env: 
         CHANGED_FILES: ${{ steps.changed-files.outputs.added_files }}
-      run: python ./src/revise_readme.py -d ${CHANGED_FILES}
+      run: python test_argument.py -d ${CHANGED_FILES}
 
     # - name: Git Push Action
     #   run: |
