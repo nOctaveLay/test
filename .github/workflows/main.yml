@@ -50,4 +50,4 @@ jobs:
         git config --global user.email ${{vars.email}}
         git add .
         git commit -m "change readme.md weekly automatically"
-        git push https://${{vars.name}}:${{secret.testToken}}github.com/nOctaveLay/test.git
+        git push https://${{vars.name}}:${{secrets.testToken}}github.com/nOctaveLay/test.git
