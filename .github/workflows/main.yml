@@ -26,6 +26,7 @@ jobs:
         python-version: "3.10"
 
     - name: Add paper list to readme.md
+      id: add-paper
       env: 
         ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
       run: |
@@ -33,12 +34,13 @@ jobs:
           python test_argument.py -d "$file"
           echo "$file"
         done
-
-    # - name: Git Push Action
-    #   run: |
-    #     git config --global user.name ${{vars.name}}
-    #     git config --global user.email ${{vars.email}}
-    #     git checkout "임정아"
-    #     git add .
-    #     git commit -m "change readme.md weekly automatically"
-    #     git push
+        
+    - name: Git Push Action
+      run: 
+        echo ${{steps.add-paper.outputs}}
+        # git config --global user.name ${{vars.name}}
+        # git config --global user.email ${{vars.email}}
+        # git checkout "임정아"
+        # git add .
+        # git commit -m "change readme.md weekly automatically"
+        # git push
