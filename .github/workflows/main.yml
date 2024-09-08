@@ -34,16 +34,13 @@ jobs:
           python test_argument.py -d "$file"
           echo "$file"
         done
-    - name: Check Diff
-      id: check-diff
-      run:
-        echo git status README.md -s >> $GITHUB_OUTPUT
         
     - name: Git Push Action
-      if: ${{steps.check-diff.GITHUB_OUTPUT}}
       run: 
-        git config --global user.name ${{vars.name}}
-        git config --global user.email ${{vars.email}}
-        git add .
-        git commit -m "change readme.md weekly automatically"
-        git push
+        test = $(git status README.md -s)
+        if (($test)); then
+          git config --global user.name ${{vars.name}}
+          git config --global user.email ${{vars.email}}
+          git add .
+          git commit -m "change readme.md weekly automatically"
+          git push
