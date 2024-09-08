@@ -50,5 +50,5 @@ jobs:
         git config --global user.email ${{vars.email}}
         git add .
         git commit -m "change readme.md weekly automatically"
-        git push
+        git push origin main
 
