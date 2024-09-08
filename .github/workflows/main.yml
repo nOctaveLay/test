@@ -27,7 +27,7 @@ jobs:
 
     - name: Add paper list to readme.md
       env: 
-        ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.added_files }}
+        ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
       run: |
         for file in ${ALL_CHANGED_FILES}; do
           python test_argument.py -d "$file"
