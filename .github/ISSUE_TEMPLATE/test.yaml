@@ -10,7 +10,7 @@ body:
       label: text area label
       description: text area description
       placeholder: "text area placeholder"
-      value: text_area_value
+      value: textareavalue
     validations:
       required: true
   - type: dropdown
