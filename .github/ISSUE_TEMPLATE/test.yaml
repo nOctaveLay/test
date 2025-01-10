@@ -7,10 +7,10 @@ assignees:
 body:
   - type: textarea
     attributes:
-      label: Operating System
-      description: What operating system are you using?
-      placeholder: "Example: macOS Big Sur"
-      value: operating system
+      label: text area label
+      description: text area description
+      placeholder: "text area placeholder"
+      value: text_area_value
     validations:
       required: true
   - type: dropdown
