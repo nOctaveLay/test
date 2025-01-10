@@ -1,7 +1,6 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-Projects: "test project"
 ---
 
 **Is your feature request related to a problem? Please describe.**
